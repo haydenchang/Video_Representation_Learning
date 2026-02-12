@@ -1,0 +1,22 @@
+[nuScenes CAM_FRONT videos]
+        |
+        v
+[Clip Sampler] -> outputs: clip (T,H,W,3), meta(stream_id, start_idx, stride)
+        |
+        v
+[Masking] -> outputs: visible_patches, mask_indices
+        |
+        v
+[Encoder: CNN patch embed + Temporal Transformer] -> outputs: latent tokens
+        |
+        v
+[Reconstruction Head/Decoder] -> outputs: predicted masked patches
+        |
+        v
+[Loss] -> reconstruction loss (masked-only)
+        |
+        v
+[Logging] -> loss curve, embedding norm stats, sanity visualizations
+        |
+        v
+[Freeze Encoder] -> [Linear Probe] -> compare vs random baseline

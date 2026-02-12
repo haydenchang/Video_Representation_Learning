@@ -10,3 +10,4 @@ wandb/
 outputs/
 checkpoints/
 data/
+artifacts/viz/
