@@ -15,7 +15,7 @@ CNN patch embed + temporal transformer encoder + lightweight reconstruction head
 ## Clip Spec (Initial Fixed)
 T = 6–8 frames
 Temporal stride: configurable, but default stride = 1
-Resolution: modest (exact value to be chosen Day 3, but must stay fixed across scaling runs)
+Resolution: 360x640 
 
 ## What this project is NOT doing (Fixed)
 - No BEV occupancy, no 3D occupancy
