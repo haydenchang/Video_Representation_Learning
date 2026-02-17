@@ -11,7 +11,7 @@ items = build_clip_index(
     T=8,
     stride=1,
     keyframes_only=True,
-    max_scenes=5,           # small for now (local-only sanity)
+    max_scenes=50,           # small for now (local-only sanity)
     max_clips_per_scene=10, # cap work
 )
 

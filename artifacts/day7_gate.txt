@@ -1,0 +1,40 @@
+DAY 7 GATE — Linear Probe (Multi-Label Object Presence)
+
+Date: 2026-02-14
+Dataset: nuScenes v1.0-trainval, CAM_FRONT keyframes only
+Clip index: artifacts/clip_index_T8_s1_keyframes.json
+Num clips used for probe: 500 (train=400, val=100)
+
+Encoder pretraining:
+- Objective: Masked video modeling (reconstruct masked patches/tokens)
+- Checkpoint: artifacts/checkpoints/mvm_day6_seed1_step1000.pt
+- Steps: 1000
+- Notes: CPU run, stable (no NaNs)
+
+Probe task:
+- Target: multi-label object presence (car, truck, bus, pedestrian, bicycle, motorcycle)
+- Head: Linear (nn.Linear(2*d_model -> 6))
+- Loss: BCEWithLogitsLoss with pos_weight computed from TRAIN split
+- Optim: AdamW(lr=1e-3, wd=0.01)
+- Epochs: 50
+- Metric: mAP (mean average precision) on VAL split
+
+Evaluation protocol:
+- For each seed s:
+  - deterministic split via random.Random(s).shuffle(idxs)
+  - train_idx = first 400, val_idx = next 100
+  - compare pretrained encoder vs random encoder under identical probe settings
+
+Results (mAP):
+- Seed 1: pretrained 0.684886 | random 0.679756 | delta +0.005130
+- Seed 2: pretrained 0.644514 | random 0.642098 | delta +0.002416
+- Seed 3: pretrained 0.678025 | random 0.651345 | delta +0.026680
+
+Summary:
+- pretrained mean±std: 0.669142 ± 0.017638
+- random     mean±std: 0.657733 ± 0.016024
+- delta (pre-rand)    : +0.011408
+
+Gate decision:
+- PASS (narrow): pretrained > random across 3 seeds, mean delta ~ +0.011
+- Action item: rerun on RCAC (GPU) when available for stronger confirmation + more steps

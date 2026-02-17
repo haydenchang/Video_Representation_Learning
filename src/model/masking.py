@@ -34,19 +34,21 @@ def masked_mse_loss(pred: torch.Tensor, target: torch.Tensor, mask: torch.Tensor
     pred:   [B, N, D]
     target: [B, N, D]
     mask:   [B, N] boolean (True=masked)
-    Returns scalar loss averaged over (B * num_masked * D)
+    Returns scalar loss averaged over masked positions and D.
     """
     if pred.shape != target.shape:
         raise ValueError(f"pred shape {pred.shape} != target shape {target.shape}")
     if mask.ndim != 2 or mask.shape[0] != pred.shape[0] or mask.shape[1] != pred.shape[1]:
         raise ValueError(f"mask shape {mask.shape} incompatible with pred shape {pred.shape}")
 
-    # expand mask to [B,N,1] for broadcasting
-    diff2 = (pred - target) ** 2  # [B, N, D]
-    m3 = mask.unsqueeze(-1).expand_as(diff2)  # [B, N, D]
-    masked_diff2 = diff2[m3]  # 1D view of all masked entries
+    diff2 = (pred - target) ** 2  # [B,N,D]
+    m = mask.unsqueeze(-1).to(diff2.dtype)  # [B,N,1] float {0,1}
+    denom = m.sum() * diff2.shape[-1]       # (#masked tokens total) * D
 
-    if masked_diff2.numel() == 0:
-        raise RuntimeError("No masked elements; check mask_ratio")
+    if denom.item() == 0:
+        raise RuntimeError("No masked tokens; check mask_ratio")
 
-    return masked_diff2.mean()
+    # sum only masked tokens, then normalize
+    loss = (diff2 * m).sum() / denom
+    return loss
+

@@ -1,0 +1,280 @@
+{
+  "config": {
+    "checkpoints": [
+      "C:\\DS\\ssl-video-rep\\artifacts\\checkpoints\\mvm_day8_improved_seed1_step3000.pt",
+      "C:\\DS\\ssl-video-rep\\artifacts\\checkpoints\\mvm_day8_improved_seed1_step4000.pt",
+      "C:\\DS\\ssl-video-rep\\artifacts\\checkpoints\\mvm_day8_improved_seed1_step5000.pt",
+      "C:\\DS\\ssl-video-rep\\artifacts\\checkpoints\\mvm_day8_improved_seed1_step6000.pt"
+    ],
+    "diag_seeds": "1,2,3",
+    "diag_epochs": 20,
+    "diag_base_lr": 0.001,
+    "diag_lr_sweep": [
+      0.0001,
+      0.0003,
+      0.001,
+      0.003
+    ]
+  },
+  "phase1": [
+    {
+      "ckpt_path": "C:\\DS\\ssl-video-rep\\artifacts\\checkpoints\\mvm_day8_improved_seed1_step3000.pt",
+      "probe_lr": 0.001,
+      "probe_epochs": 20,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "pre_maps": [
+        0.5695643424987793,
+        0.5806133846441904,
+        0.6386898631850878
+      ],
+      "rand_maps": [
+        0.6157408456007639,
+        0.585905502239863,
+        0.6320931104322275
+      ],
+      "pretrained_mean": 0.5962891967760191,
+      "pretrained_std": 0.03031922071373876,
+      "random_mean": 0.6112464860909514,
+      "random_std": 0.019121946173361885,
+      "delta": -0.014957289314932343
+    },
+    {
+      "ckpt_path": "C:\\DS\\ssl-video-rep\\artifacts\\checkpoints\\mvm_day8_improved_seed1_step4000.pt",
+      "probe_lr": 0.001,
+      "probe_epochs": 20,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "pre_maps": [
+        0.5693432440360388,
+        0.5797239020466805,
+        0.6395301235218843
+      ],
+      "rand_maps": [
+        0.6157408456007639,
+        0.585905502239863,
+        0.6320931104322275
+      ],
+      "pretrained_mean": 0.5961990898682012,
+      "pretrained_std": 0.03093135812629788,
+      "random_mean": 0.6112464860909514,
+      "random_std": 0.019121946173361885,
+      "delta": -0.015047396222750198
+    },
+    {
+      "ckpt_path": "C:\\DS\\ssl-video-rep\\artifacts\\checkpoints\\mvm_day8_improved_seed1_step5000.pt",
+      "probe_lr": 0.001,
+      "probe_epochs": 20,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "pre_maps": [
+        0.5632950489719709,
+        0.5793270145853361,
+        0.6384825669229031
+      ],
+      "rand_maps": [
+        0.6164529348413149,
+        0.5855342571934065,
+        0.6315928461651007
+      ],
+      "pretrained_mean": 0.5937015434934033,
+      "pretrained_std": 0.032334306084014254,
+      "random_mean": 0.6111933460666074,
+      "random_std": 0.019167609137555313,
+      "delta": -0.01749180257320404
+    },
+    {
+      "ckpt_path": "C:\\DS\\ssl-video-rep\\artifacts\\checkpoints\\mvm_day8_improved_seed1_step6000.pt",
+      "probe_lr": 0.001,
+      "probe_epochs": 20,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "pre_maps": [
+        0.564380389948686,
+        0.5790992801388105,
+        0.6383961687485377
+      ],
+      "rand_maps": [
+        0.6164529348413149,
+        0.5855342571934065,
+        0.6315928461651007
+      ],
+      "pretrained_mean": 0.5939586129453448,
+      "pretrained_std": 0.03199149581194614,
+      "random_mean": 0.6111933460666074,
+      "random_std": 0.019167609137555313,
+      "delta": -0.017234733121262558
+    }
+  ],
+  "phase2": [
+    {
+      "ckpt_path": "C:\\DS\\ssl-video-rep\\artifacts\\checkpoints\\mvm_day8_improved_seed1_step3000.pt",
+      "probe_lr": 0.0001,
+      "probe_epochs": 20,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "pre_maps": [
+        0.5919431621829668,
+        0.5421846484144529,
+        0.5875810608267784
+      ],
+      "rand_maps": [
+        0.643644022444884,
+        0.5622361203034719,
+        0.630480511734883
+      ],
+      "pretrained_mean": 0.5739029571413994,
+      "pretrained_std": 0.022498819427306728,
+      "random_mean": 0.6121202181610795,
+      "random_std": 0.035680404686172985,
+      "delta": -0.03821726101968015
+    },
+    {
+      "ckpt_path": "C:\\DS\\ssl-video-rep\\artifacts\\checkpoints\\mvm_day8_improved_seed1_step3000.pt",
+      "probe_lr": 0.0003,
+      "probe_epochs": 20,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "pre_maps": [
+        0.5849737996856371,
+        0.5710416734218597,
+        0.6210486230750879
+      ],
+      "rand_maps": [
+        0.6227017715573311,
+        0.574710118273894,
+        0.6331125733753046
+      ],
+      "pretrained_mean": 0.5923546987275282,
+      "pretrained_std": 0.021071813818543894,
+      "random_mean": 0.6101748210688432,
+      "random_std": 0.0254349504537076,
+      "delta": -0.017820122341315026
+    },
+    {
+      "ckpt_path": "C:\\DS\\ssl-video-rep\\artifacts\\checkpoints\\mvm_day8_improved_seed1_step3000.pt",
+      "probe_lr": 0.001,
+      "probe_epochs": 20,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "pre_maps": [
+        0.5640611623724302,
+        0.5806192383170128,
+        0.6363994131485621
+      ],
+      "rand_maps": [
+        0.6164529348413149,
+        0.5855342571934065,
+        0.6315928461651007
+      ],
+      "pretrained_mean": 0.593693271279335,
+      "pretrained_std": 0.03094514915957537,
+      "random_mean": 0.6111933460666074,
+      "random_std": 0.019167609137555313,
+      "delta": -0.017500074787272335
+    },
+    {
+      "ckpt_path": "C:\\DS\\ssl-video-rep\\artifacts\\checkpoints\\mvm_day8_improved_seed1_step3000.pt",
+      "probe_lr": 0.003,
+      "probe_epochs": 20,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "pre_maps": [
+        0.5679031660159429,
+        0.581917072335879,
+        0.6512048790852228
+      ],
+      "rand_maps": [
+        0.615896133085092,
+        0.5903023704886436,
+        0.6346681577463945
+      ],
+      "pretrained_mean": 0.6003417058123482,
+      "pretrained_std": 0.03641789110795072,
+      "random_mean": 0.6136222204400434,
+      "random_std": 0.018183486625470303,
+      "delta": -0.013280514627695195
+    }
+  ],
+  "best_phase1": {
+    "ckpt_path": "C:\\DS\\ssl-video-rep\\artifacts\\checkpoints\\mvm_day8_improved_seed1_step3000.pt",
+    "probe_lr": 0.001,
+    "probe_epochs": 20,
+    "seeds": [
+      1,
+      2,
+      3
+    ],
+    "pre_maps": [
+      0.5695643424987793,
+      0.5806133846441904,
+      0.6386898631850878
+    ],
+    "rand_maps": [
+      0.6157408456007639,
+      0.585905502239863,
+      0.6320931104322275
+    ],
+    "pretrained_mean": 0.5962891967760191,
+    "pretrained_std": 0.03031922071373876,
+    "random_mean": 0.6112464860909514,
+    "random_std": 0.019121946173361885,
+    "delta": -0.014957289314932343
+  },
+  "best_phase2": {
+    "ckpt_path": "C:\\DS\\ssl-video-rep\\artifacts\\checkpoints\\mvm_day8_improved_seed1_step3000.pt",
+    "probe_lr": 0.003,
+    "probe_epochs": 20,
+    "seeds": [
+      1,
+      2,
+      3
+    ],
+    "pre_maps": [
+      0.5679031660159429,
+      0.581917072335879,
+      0.6512048790852228
+    ],
+    "rand_maps": [
+      0.615896133085092,
+      0.5903023704886436,
+      0.6346681577463945
+    ],
+    "pretrained_mean": 0.6003417058123482,
+    "pretrained_std": 0.03641789110795072,
+    "random_mean": 0.6136222204400434,
+    "random_std": 0.018183486625470303,
+    "delta": -0.013280514627695195
+  },
+  "next_step_recommendation": {
+    "ckpt_path": "C:\\DS\\ssl-video-rep\\artifacts\\checkpoints\\mvm_day8_improved_seed1_step3000.pt",
+    "probe_lr": 0.003,
+    "probe_epochs": 50,
+    "probe_seeds": "1,2,3,4,5",
+    "note": "Run final confirmation with 5 seeds and 50 epochs on best ckpt/lr."
+  }
+}

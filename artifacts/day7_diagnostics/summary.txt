@@ -1,0 +1,16 @@
+==== Day 7 Diagnostics Summary ====
+
+[Phase 1] checkpoint convergence (fixed LR)
+- mvm_day8_improved_seed1_step3000.pt: delta=-0.014957 (pre=0.596289, rand=0.611246)
+- mvm_day8_improved_seed1_step4000.pt: delta=-0.015047 (pre=0.596199, rand=0.611246)
+- mvm_day8_improved_seed1_step5000.pt: delta=-0.017492 (pre=0.593702, rand=0.611193)
+- mvm_day8_improved_seed1_step6000.pt: delta=-0.017235 (pre=0.593959, rand=0.611193)
+
+[Phase 2] LR sweep on best checkpoint
+- lr=0.0001: delta=-0.038217 (pre=0.573903, rand=0.612120)
+- lr=0.0003: delta=-0.017820 (pre=0.592355, rand=0.610175)
+- lr=0.001: delta=-0.017500 (pre=0.593693, rand=0.611193)
+- lr=0.003: delta=-0.013281 (pre=0.600342, rand=0.613622)
+
+Best config: mvm_day8_improved_seed1_step3000.pt, lr=0.003, delta=-0.013281
+Final confirm command (PowerShell): $env:MVM_CKPT_PATH="C:\DS\ssl-video-rep\artifacts\checkpoints\mvm_day8_improved_seed1_step3000.pt"; $env:PROBE_LR="0.003"; $env:PROBE_EPOCHS="50"; $env:PROBE_SEEDS="1,2,3,4,5"; python -u -m scripts.train_probe_object_presence

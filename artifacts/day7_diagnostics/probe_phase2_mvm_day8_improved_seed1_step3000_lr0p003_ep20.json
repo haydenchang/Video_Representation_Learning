@@ -1,0 +1,25 @@
+{
+  "ckpt_path": "C:\\DS\\ssl-video-rep\\artifacts\\checkpoints\\mvm_day8_improved_seed1_step3000.pt",
+  "probe_lr": 0.003,
+  "probe_epochs": 20,
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "pre_maps": [
+    0.5679031660159429,
+    0.581917072335879,
+    0.6512048790852228
+  ],
+  "rand_maps": [
+    0.615896133085092,
+    0.5903023704886436,
+    0.6346681577463945
+  ],
+  "pretrained_mean": 0.6003417058123482,
+  "pretrained_std": 0.03641789110795072,
+  "random_mean": 0.6136222204400434,
+  "random_std": 0.018183486625470303,
+  "delta": -0.013280514627695195
+}
